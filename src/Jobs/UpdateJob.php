@@ -113,7 +113,7 @@ final class UpdateJob
             $array = array_merge($searchableArray, $metadata);
 
             if (! $this->hasToSearchableArray($searchable)) {
-                $array = $searchable->getModel()->transform($array);
+                $array = $searchable->getModel()->toArray();
             }
 
             $array['_tags'] = (array) ($array['_tags'] ?? []);
